@@ -21,12 +21,8 @@ body {
 .teaser .hero-body {
   padding-top: 0;
   padding-bottom: 3rem;
-}
-
-#tree {
-  display: block;
-  width: 80%; /* 或固定宽度如 800px */
-  margin: 0 auto; /* 水平居中 */
+  display: grid;
+  place-items: center; /* 简写属性，同时居中 */
 }
 
 .teaser {
@@ -141,7 +137,7 @@ body {
 
 
 .chat-container {
-    max-width: 1400px;
+    max-width: 800px;
     width: 80%; /* 或固定宽度如 800px */
     margin: 0 auto;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
