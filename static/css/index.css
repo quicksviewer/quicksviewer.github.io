@@ -136,49 +136,69 @@ body {
 }
 
 
-.chat-container {
-    max-width: 800px;
-    width: 80%; /* 或固定宽度如 800px */
-    margin: 0 auto;
+/* 重置GitHub Pages默认样式 */
+.chat-container, .chat-container * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* 主容器增强样式 */
+.chat-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 15px 20px 45px; /* 左内边距增加到45px */
+    position: relative;
+    left: 35px; /* 整体向右位移25px */
+}
+
+
+/* 消息框增强样式 */
 .message {
     margin-bottom: 1.2rem;
-    max-width: 80%;
-    display: inline-block;
+    max-width: 70%;
+    display: block; /* 改为块级元素 */
     clear: both;
     word-wrap: break-word;
     border-radius: 4px;
     font-size: 0.95rem;
     line-height: 1.4;
     padding: 8px 12px;
-    text-align: left; /* 强制所有消息文字左对齐 */
+    text-align: left;
+    /* 增强样式优先级 */
+    float: left !important;
+    position: relative;
 }
 
-.user {
-    background-color: #e3f2fd;
-    color: #1a237e;
-    float: left;
+/* 用户消息强化样式 */
+.chat-container .user {
+    background-color: #e3f2fd !important;
+    color: #1a237e !important;
     margin-left: 0;
+    transform: translateX(0); /* 强制左对齐 */
 }
 
-.gpt {
-    background-color: #f5f5f5;
-    color: #212121;
-    float: left;
+/* GPT消息强化样式 */
+.chat-container .gpt {
+    background-color: #f5f5f5 !important;
+    color: #212121 !important;
     margin-left: 30px;
     margin-top: 4px;
+    transform: translateX(30px); /* 双重定位保障 */
 }
 
-/* 移动端适配 */
+/* 移动端强化适配 */
 @media (max-width: 768px) {
+    .chat-container {
+        padding: 15px 10px;
+    }
     .message {
         max-width: 85%;
         font-size: 0.9rem;
     }
-    
     .gpt {
-        margin-left: 20px;
+        margin-left: 20px !important;
+        transform: translateX(20px);
     }
 }
